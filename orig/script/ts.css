@@ -1,0 +1,147 @@
+/* Universal backgroud color */
+body{
+	background-color:#e0f1f4;
+	margin-left:2em;
+	margin-right:2em;
+}
+/* .subt for title bar */
+.subt {
+	padding-left: 1px;
+	background: #a9e4f7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #a9e4f7 0%, #0fb4e7 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a9e4f7), color-stop(100%,#0fb4e7)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a9e4f7 0%,#0fb4e7 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a9e4f7 0%,#0fb4e7 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9e4f7', endColorstr='#0fb4e7',GradientType=0 ); /* IE6-9 */
+}
+
+/* info class is for hover effect */
+a.info{
+	position:relative; /*this is the key*/
+	background-color:#ccc;
+	color:#000;
+	text-decoration:none
+}
+
+a.info:hover{
+	background-color:#ff0;
+}
+
+a.info span{display: none;}
+
+a.info:hover span{ /*the span will display just on :hover state*/
+	display:block;
+	z-index:99; 
+	position:absolute;
+	top:82px;
+	left:-50px;
+	margin:0;
+	float:left;
+	padding:1px 5px;
+	background-color:#666; 
+	max-width:250px;   /* FF IE7 */
+	min-width:200px;
+	width: auto !important;
+	width: 200px;
+	height: auto;
+	color:#fff;
+	text-align: center;
+	white-space: nowrap;
+	background:#000;
+	border:-1px solid #000;
+   -moz-border-radius: 6px;
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   border-radius: 6px;
+	text-shadow:1px 1px #000;
+	opacity:.8;
+	filter: alpha ( opacity=80 );
+	-moz-opacity: .8;
+}
+.pic_container {
+	width: 153px;
+}
+.dir_link {
+	text-decoration:none;
+    color: black;
+}
+
+.progress { /*the span will display just on :hover state*/
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding:1px 5px;
+	background-color:#666; 
+	max-width:350px;   /* FF IE7 */
+	min-width:200px;
+	width: auto !important;
+	width: 200px;
+	height: auto;
+	color:#fff;
+	text-align: center;
+	white-space: nowrap;
+	background:#000;
+	border:-1px solid #000;
+   -moz-border-radius: 6px;
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   border-radius: 6px;
+	text-shadow:1px 1px #000;
+	opacity:.8;
+	filter: alpha ( opacity=80 );
+	-moz-opacity: .8;
+}
+
+
+/* class album-pic is for thumbnail */
+.album-pic img { 
+	z-index:90; 
+	position:relative;
+	vertical-align: middle; 
+	max-width:128px;   /* FF IE7 */
+	max-height:96px; /* FF IE7 */
+	width: auto !important;
+	height: auto;
+	_width:expression((this.width > 128 && this.width > this.height) ? "128px": "auto"); /* IE6 */
+	_height:expression((this.height > 96) ? "96px": "auto"); /* IE6 */ 
+	border:0px;
+	overflow:hidden;
+}
+
+.album-back { 
+	background-color: black;
+}
+
+.button {
+	border-top: 1px solid #96d1f8;
+	background: #65a9d7;
+	background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+	background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+	background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+	background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+	background: -o-linear-gradient(top, #3e779d, #65a9d7);
+	padding: 6px 12px;
+	 -webkit-border-radius: 27px;
+	 -moz-border-radius: 27px;
+	 border-radius: 27px;
+	 -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	 -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	 box-shadow: rgba(0,0,0,1) 0 1px 0;
+	 text-shadow: rgba(0,0,0,.4) 0 1px 0;
+	color: white;
+	font-size: 12px;
+	font-family: Georgia, serif;
+	text-decoration: none;
+	vertical-align: middle;
+}
+.button:hover {
+	border-top-color: #28597a;
+	background: #28597a;
+	color: #ccc;
+}
+.button:active {
+	border-top-color: #1b435e;
+	background: #1b435e;
+}
