@@ -7,18 +7,18 @@ use URI::Escape;
 use File::Find;   
 use File::Basename;
 
-use JSON::Tiny;
+use JSON::Tiny qw/encode_json/;
  
-sub q {
-    my $query_string = '';
+sub qstr {
+    my $qstr = '';
     if ($ENV{'REQUEST_METHOD'}) {
-          $query_string = $ENV{'QUERY_STRING'};
+        $qstr = $ENV{'QUERY_STRING'};
     } elsif ($ARGV[0]) {
-          $query_string = $ARGV[0];
+        $qstr = $ARGV[0];
     }
 
-    my %param;
-    my @pairs = split(/&/, $query_string);
+    my %param = ();
+    my @pairs = split(/&/, $qstr);
 
     foreach (@pairs) {
         my($key, $value) = split(/=/, $_, 2);
@@ -30,8 +30,26 @@ sub q {
 };
 
 sub list_images {
-    find({ wanted => \&process, follow => 1 }, '.');
+    my @files = ();
+    push @files, "derp";
+    find({
+        wanted => sub {
+            -f && push @files, {
+                fname => $_
+            };
+        },
+    }, '.');
+    return \@files;
 };
 
 sub ctrl_list {
+    my $p = qstr;
+    if (! defined $p->{'action'}) {
+        print encode_json(list_images());
+        return;
+    } else {
+        print encode_json("no action given");
+    }
 };
+
+ctrl_list();
