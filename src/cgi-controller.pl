@@ -40,7 +40,6 @@ sub qstr {
 
 sub list_images {
     my @files = ();
-    push @files, "derp";
     find({
         wanted => sub {
             -f && push @files, {
