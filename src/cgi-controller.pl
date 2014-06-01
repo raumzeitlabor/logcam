@@ -6,11 +6,17 @@ use warnings;
 use FindBin;
 use lib "$FindBin::Bin/../ext";
 
+use CGI;
 use URI::Escape;
 use File::Find;   
 use File::Basename;
 
 use JSON::Tiny qw/encode_json/;
+
+my $q = CGI->new;
+print $q->header('application/json');
+
+ctrl_list();
  
 sub qstr {
     my $qstr = '';
@@ -54,5 +60,3 @@ sub ctrl_list {
         print encode_json("no action given");
     }
 }
-
-ctrl_list();
