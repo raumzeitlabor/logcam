@@ -3,6 +3,9 @@
 use strict;
 use warnings;
 
+use FindBin;
+use lib "$FindBin::Bin/../ext";
+
 use URI::Escape;
 use File::Find;   
 use File::Basename;
