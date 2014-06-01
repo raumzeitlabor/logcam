@@ -27,7 +27,7 @@ sub qstr {
     }
 
     return \%param;
-};
+}
 
 sub list_images {
     my @files = ();
@@ -40,7 +40,7 @@ sub list_images {
         },
     }, '.');
     return \@files;
-};
+}
 
 sub ctrl_list {
     my $p = qstr;
@@ -50,6 +50,6 @@ sub ctrl_list {
     } else {
         print encode_json("no action given");
     }
-};
+}
 
 ctrl_list();
