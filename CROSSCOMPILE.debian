@@ -1,0 +1,7 @@
+# install gpg keyring
+apt-get install emdebian-archive-keyring
+# emdebian provides us with our toolchain
+echo "deb http://www.emdebian.org/debian/ squeeze main" >> /etc/apt/sources.list
+apt-get update
+# libc, gcc and binutils
+apt-get install binutils-arm-linux-gnueabi gcc-4.3-arm-linux-gnueabi gcc-4.3-arm-linux-gnueabi-base libc6-dev-armel-cross
